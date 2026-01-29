@@ -1,16 +1,77 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 👁️ TruthLens (Proof of Human)
 
-Currently, two official plugins are available:
+> **Enterprise-grade Deepfake Detection & Media Authenticity Platform.**
+> _Built for the [Insert Hackathon Name] Hackathon._
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![Project Banner](https://via.placeholder.com/1200x400.png?text=TruthLens+Dashboard+Preview)
+*(Replace this link with a screenshot of your actual dashboard)*
 
-## React Compiler
+## 🚀 Overview
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**TruthLens** is a frontend prototype for a SaaS platform designed to verify digital media authenticity. It simulates advanced forensic analysis to detect deepfakes in video and audio using biometric analysis and artifact detection.
 
-## Expanding the ESLint configuration
+Key innovations include a **Client-Side Computer Vision Engine** that performs real-time motion heat-mapping directly in the browser to verify liveness without a heavy backend.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ✨ Key Features
+
+* **🎥 Live Liveness Detection:** Uses browser-based computer vision (Canvas API) to generate real-time motion heatmaps, proving the video feed is live and not a pre-recorded injection.
+* **🕵️‍♂️ Forensic Analysis Simulation:** visually impressive scanning states with frame-by-frame artifact detection simulation.
+* **📊 Enterprise Dashboard:** "Linear-style" UI with dark mode, glassmorphism, and interactive data visualization using Recharts.
+* **⌨️ Command Palette:** Fully functional `Cmd+K` interface for rapid navigation.
+* **🛡️ Trust Watermarking:** Toggleable cryptographic visual seal for verified media.
+* **🎨 Premium UI/UX:** Built with a custom particle background engine and high-performance Framer Motion animations.
+
+## 🛠️ Tech Stack
+
+* **Framework:** [React](https://react.dev/) + [Vite](https://vitejs.dev/)
+* **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+* **Animations:** [Framer Motion](https://www.framer.com/motion/)
+* **Icons:** [Lucide React](https://lucide.dev/)
+* **Charts:** [Recharts](https://recharts.org/)
+* **Routing:** React Router DOM
+* **Utils:** React Dropzone, clsx
+
+## ⚙️ Installation & Setup
+
+Follow these steps to clone and run the project locally.
+
+### 1. Clone the repository
+```bash
+git clone [https://github.com/your-username/truthlens.git](https://github.com/your-username/truthlens.git)
+cd truthlens
+
+```
+
+### 2. Install Dependencies
+
+```bash
+npm install
+
+```
+
+### 3. Run the Development Server
+
+```bash
+npm run dev
+
+```
+
+Open your browser and navigate to `http://localhost:5173`.
+
+---
+
+
+
+
+## 🤝 Contributing
+
+1. Fork the repository.
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`).
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`).
+4. Push to the branch (`git push origin feature/AmazingFeature`).
+5. Open a Pull Request.
+
+## 📄 License
+
+Distributed under the MIT License. See `LICENSE` for more information.
