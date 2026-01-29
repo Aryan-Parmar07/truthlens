@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --neon-cyan: #00f3ff;
+  --neon-pink: #ff00ff;
+  --bg-color: #030303;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: #e0e0e0;
+  font-family: 'Courier New', Courier, monospace; /* Hardcore Terminal Font */
+  overflow-x: hidden;
+}
+
+/* --- CRT SCREEN FX --- */
+.scanlines {
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0),
+    rgba(255,255,255,0) 50%,
+    rgba(0,0,0,0.2) 50%,
+    rgba(0,0,0,0.2)
+  );
+  background-size: 100% 4px;
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 60;
+  opacity: 0.6;
+}
+
+.vignette {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle, rgba(0,0,0,0) 60%, rgba(0,20,0,0.4) 100%);
+  pointer-events: none;
+  z-index: 60;
+}
+
+.screen-flicker {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 255, 0, 0.02);
+  opacity: 0;
+  z-index: 60;
+  pointer-events: none;
+  animation: flicker 0.1s infinite;
+}
+
+@keyframes flicker {
+  0% { opacity: 0.01; }
+  5% { opacity: 0.05; }
+  10% { opacity: 0.01; }
+}
+
+/* --- GLITCH TEXT FX --- */
+.glitch-text {
+  position: relative;
+  color: white;
+}
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--bg-color);
+}
+.glitch-text::before {
+  left: 2px;
+  text-shadow: -1px 0 #ff00c1;
+  clip: rect(44px, 450px, 56px, 0);
+  animation: glitch-anim 5s infinite linear alternate-reverse;
+}
+.glitch-text::after {
+  left: -2px;
+  text-shadow: -1px 0 #00fff9;
+  clip: rect(44px, 450px, 56px, 0);
+  animation: glitch-anim2 5s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim {
+  0% { clip: rect(12px, 9999px, 5px, 0); }
+  5% { clip: rect(55px, 9999px, 86px, 0); }
+  10% { clip: rect(10px, 9999px, 40px, 0); }
+  100% { clip: rect(10px, 9999px, 80px, 0); }
+}
+@keyframes glitch-anim2 {
+  0% { clip: rect(22px, 9999px, 15px, 0); }
+  20% { clip: rect(75px, 9999px, 36px, 0); }
+  100% { clip: rect(30px, 9999px, 10px, 0); }
+}
+
+/* --- HUD BORDERS --- */
+.hud-panel {
+  background: rgba(10, 20, 30, 0.7);
+  border: 1px solid rgba(0, 243, 255, 0.2);
+  box-shadow: 0 0 15px rgba(0, 243, 255, 0.1);
+  position: relative;
+}
+.hud-panel::before { /* Top Left Bracket */
+  content: ''; position: absolute; top: -1px; left: -1px; width: 20px; height: 20px;
+  border-top: 2px solid var(--neon-cyan); border-left: 2px solid var(--neon-cyan);
+}
+.hud-panel::after { /* Bottom Right Bracket */
+  content: ''; position: absolute; bottom: -1px; right: -1px; width: 20px; height: 20px;
+  border-bottom: 2px solid var(--neon-cyan); border-right: 2px solid var(--neon-cyan);
+}
+
+/* --- MATRIX RAIN CANVAS --- */
+#matrix-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  opacity: 0.15;
+}
